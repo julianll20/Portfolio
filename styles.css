@@ -6,18 +6,21 @@
   border: none;
   outline: none;
   text-decoration: none;
-  scroll-behavior: smooth;
+ 
   font-family: "Montserrat", "sans-serif";
 }
 :root {
   --bg-color: #081b29;
-  --second-color: #112e42;
+  --second-color: #677179;
   --text-color: #ededed;
   --main-color: #00abf0;
+  --fill-size: 0%;
 }
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  
 }
 body {
   background: rgb(66, 66, 66);
@@ -29,14 +32,14 @@ body {
   left: 0;
   width: 100%;
   padding: 2rem 9%;
-  background-color: rgb(66, 66, 66) ;
+  background-color: rgb(66, 66, 66);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
-.header.sticky{
-  border-bottom: .1rem solid rgba(0, 0, 0, .2);
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
 .logo {
   font-size: 2.5rem;
@@ -50,8 +53,8 @@ body {
   margin-left: 3.5rem;
   transition: 0.3s;
 }
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover
+ {
   color: rgb(7, 186, 240);
 }
 #menu-icon {
@@ -59,7 +62,6 @@ body {
   color: var(--main-color);
   cursor: pointer;
   display: none;
-  
 }
 section {
   min-height: 100vh;
@@ -122,6 +124,7 @@ section {
 }
 .inicio-sci a:hover {
   color: var(--bg-color);
+ 
 }
 
 .inicio-sci a::before {
@@ -216,7 +219,7 @@ section {
   text-align: center;
   margin-bottom: 3rem;
 }
-.heading span{
+.heading span {
   color: #0bcbec;
 }
 .CONTACTO form .input-box input,
@@ -227,133 +230,182 @@ section {
   color: var(--text-color);
   background-color: var(--second-color);
   margin: 0.7rem 0;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
-.CONTACTO form .input-box input{
+.CONTACTO form .input-box input {
   width: 49%;
 }
-.CONTACTO form textarea{
+.CONTACTO form textarea {
   resize: none;
 }
-.CONTACTO form .btn{
+.CONTACTO form .btn {
   margin-top: 2rem;
   cursor: pointer;
 }
 
-
-.SKILLS{
+.SKILLS {
   min-height: auto;
   padding-bottom: 7rem;
   background: rgb(66, 66, 66);
 }
-.SKILLS h2{
+.SKILLS h2 {
   margin-bottom: 50px;
-  
 }
 
-.SKILLS .skills-row{
+.SKILLS .skills-row {
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
 }
-.skills-row .skill-column{
+.skills-row .skill-column {
   flex: 1 1 40rem;
-
 }
 
-.skill-column .title{
-    font-size: 2.5rem;
-    margin: 0 0 1.5rem;
-    display: flex;
-    justify-content: center
+.skill-column .title {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
-.skills-box .skills-content{
+.skills-box .skills-content {
   position: relative;
-  border: .2rem solid var(--main-color);
-  border-radius: .6rem;
-  padding: .5rem 1.5rem;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.5rem;
+}
+.skills-box .skills-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
 }
 
-.skills-content .progress{
+.skills-content .progress {
   padding: 1rem 0;
 }
 
-.skills-content .progress h3{
+.skills-content .progress h3 {
   font-size: 1.7rem;
   display: flex;
   justify-content: space-between;
 }
 
-.skills-content .progress h3 span{
+.skills-content .progress h3 span {
   color: var(--text-color);
 }
 
 .skills-content .progress .bar {
   height: 2.5rem;
-  border-radius: .6rem;
-  border: .2rem solid var(--main-color);
-  padding: .5rem;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--main-color);
+  padding: 0.5rem;
   margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
 }
-.skills-content .progress .bar span{
+.skills-content .progress .bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Cambiado de var(--fill-size) a 0 */
+  height: 100%;
+  background-color: var(--main-color);
+  animation: fill-bar 0.8s 0.3s ease-in-out forwards;
+}
+
+.skills-content .progress .bar span {
   display: block;
   height: 100%;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   background: var(--main-color);
-
 }
 
-.about-img {
-  border: 4px solid #0bcbec;
-  border-radius: 10px; /* Example value, adjust as needed */
-  transition: border-color 0.3s;
+.skill-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
+  width: 90%; /* Establece el ancho inicial en 0 para que la barra comience vacía */
+  background-color: var(--main-color); /* Color de fondo de la barra de carga */
+  animation: progress-animation 2s ease-in-out forwards; /* Aplica la animación */
 }
 
+.skill-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
+  width: 90%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
 
+.skill-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
+  width: 85%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+  width: 90%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
+  width: 80%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
+  width: 60%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span {
+  width: 75%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
 
+.skill-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
+  width: 90%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
+  width: 90%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
+  width: 80%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
+  width: 95%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
+  width: 100%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span {
+  width: 100%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
+.skill-column:nth-child(2) .skills-content .progress:nth-child(7) .bar span {
+  width: 100%;
+  background-color: var(--main-color);
+  animation: progress-animation 2s ease-in-out forwards;
+}
 
+@keyframes progress-animation {
+  from {
+    width: 0; /* Ancho inicial */
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.progress {
+  font-size: 25px;
+}
