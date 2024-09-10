@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-  text-decoration: none;
- 
-  font-family: "Montserrat", "sans-serif";
-}
+
+@import url(./css/contacto.css);
+@import url(./css/curriculum.css);
+@import url(./css/sobreMi.css);
+@import url(./css/skill.css);
+@import url(./css/inicio.css);
+@import url(./css/portfolio.css);
+@import url(./css/general.css);
+
 :root {
   --bg-color: #081b29;
   --second-color: #677179;
@@ -16,232 +14,15 @@
   --main-color: #00abf0;
   --fill-size: 0%;
 }
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  
-}
+html{
+  /* me permite deslizar cuando hago clic en los links del menu */
+  scroll-behavior: smooth;}
+
 body {
   background: rgb(66, 66, 66);
   color: var(--text-color);
 }
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem 9%;
-  background-color: rgb(66, 66, 66);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-.header.sticky {
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
-}
-.logo {
-  font-size: 2.5rem;
-  color: rgb(240, 236, 7);
-  font-weight: 600;
-}
-.navbar a {
-  font-size: 1.7rem;
-  color: var(--text-color);
-  font-weight: 500;
-  margin-left: 3.5rem;
-  transition: 0.3s;
-}
-.navbar a:hover
- {
-  color: rgb(7, 186, 240);
-}
-#menu-icon {
-  font-size: 3.6rem;
-  color: var(--main-color);
-  cursor: pointer;
-  display: none;
-}
-section {
-  min-height: 100vh;
-  padding: 10rem 9% 2rem;
-}
-.INICIO {
-  display: flex;
-  align-items: center;
-  padding: 0 9%;
-}
 
-.inicio-contenido {
-  max-width: 60rem;
-}
-.inicio-contenido h1 {
-  font-size: 5.6rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.inicio-contenido .text-animate {
-  position: relative;
-  width: 35rem;
-}
-.inicio-contenido .text-animate h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px rgb(240, 236, 7);
-}
-.inicio-contenido span {
-  color: #0bcbec;
-}
-.inicio-contenido p {
-  font-size: 1.6rem;
-  margin: 2rem 0 4rem;
-}
-.inicio-sci {
-  position: absolute;
-  bottom: 4rem;
-  width: 250px;
-  display: flex;
-  justify-content: space-between;
-}
-.inicio-sci a {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: 0.2rem solid var(--main-color);
-  border-radius: 50%;
-  font-size: 20px;
-  color: var(--main-color);
-  z-index: 1;
-  overflow: hidden;
-  transition: 0.5s;
-  margin: 3rem 1.5rem 3rem 0;
-}
-.inicio-sci a:hover {
-  color: var(--bg-color);
- 
-}
-
-.inicio-sci a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--main-color);
-  z-index: -1;
-  transition: 0.5s;
-}
-.inicio-sci a:hover::before {
-  width: 100%;
-}
-.img-home {
-  position: relative;
-}
-
-.img-home img {
-  position: absolute;
-  right: -400px;
-  width: 300px;
-  height: 330px;
-  border-radius: 50%;
-  border: 5px solid #d4d000;
-}
-.SOBRE-MI {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background: rgb(51, 51, 51);
-}
-.about-img {
-  border: 4px solid #0bcbec;
-  border-radius: px;
-  transition: border-color 0.3s;
-}
-.about-img img {
-  width: 35vw;
-  height: auto;
-}
-.heading {
-  text-align: center;
-  font-size: 4.5rem;
-}
-.btn {
-  display: inline-block;
-  padding: 1rem 2.8rem;
-  background: #0bcbec;
-  border-radius: 4rem;
-  box-shadow: 0 0 1rem var(--main-color);
-  font-size: 1.6rem;
-  color: var(--second-color);
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  transition: 0.5s ease;
-  margin-top: 1rem;
-}
-.btn:hover {
-  box-shadow: none;
-}
-.encabezado {
-  text-align: center;
-  font-size: 4.5rem;
-}
-.encabezado span {
-  color: #0bcbec;
-}
-.about-content h2 {
-  text-align: left;
-  line-height: 1.2;
-}
-.about-content h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px rgb(240, 236, 7);
-}
-.about-content p {
-  font-size: 1.6rem;
-  margin: 2rem 0 3rem;
-}
-.CONTACTO h2 {
-  margin-bottom: 3rem;
-}
-.CONTACTO form {
-  max-width: 70rem;
-  margin: 1rem auto;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.heading span {
-  color: #0bcbec;
-}
-.CONTACTO form .input-box input,
-.CONTACTO form textarea {
-  width: 100%;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-  background-color: var(--second-color);
-  margin: 0.7rem 0;
-  border-radius: 0.8rem;
-}
-.CONTACTO form .input-box input {
-  width: 49%;
-}
-.CONTACTO form textarea {
-  resize: none;
-}
-.CONTACTO form .btn {
-  margin-top: 2rem;
-  cursor: pointer;
-}
 
 .SKILLS {
   min-height: auto;
@@ -313,7 +94,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0; /* Cambiado de var(--fill-size) a 0 */
+  width: 0; 
   height: 100%;
   background-color: var(--main-color);
   animation: fill-bar 0.8s 0.3s ease-in-out forwards;
@@ -329,75 +110,75 @@ section {
 .skill-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
   width: 90%; /* Establece el ancho inicial en 0 para que la barra comience vacía */
   background-color: var(--main-color); /* Color de fondo de la barra de carga */
-  animation: progress-animation 2s ease-in-out forwards; /* Aplica la animación */
+  animation: progress-animation 4s ease-in-out forwards; /* Aplica la animación */
 }
 
 .skill-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
   width: 90%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 
 .skill-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
   width: 85%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
   width: 90%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
   width: 80%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
   width: 60%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span {
   width: 75%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 
 .skill-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
   width: 90%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
   width: 90%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
   width: 80%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
   width: 95%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
   width: 100%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span {
   width: 100%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards ;
 }
 .skill-column:nth-child(2) .skills-content .progress:nth-child(7) .bar span {
   width: 100%;
   background-color: var(--main-color);
-  animation: progress-animation 2s ease-in-out forwards;
+  animation: progress-animation 4s ease-in-out forwards;
 }
 
 @keyframes progress-animation {
@@ -409,3 +190,9 @@ section {
 .progress {
   font-size: 25px;
 }
+
+
+
+
+
+

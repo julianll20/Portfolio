@@ -1,0 +1,100 @@
+.SOBRE-MI {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: rgb(51, 51, 51);
+    font-size: 15px;
+  }
+  .about-img {
+    border: 4px solid #0bcbec;
+    border-radius: px;
+    transition: border-color 0.3s;
+  }
+  .about-img img {
+    width: 35vw;
+    height: auto;
+  }
+  .heading {
+    text-align: center;
+    font-size: 4.5rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #0bcbec;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+    margin-top: 1rem;
+  }
+  
+  .extra {
+    display: none;
+    
+  }
+  .Datos1 {
+    margin-bottom: 20px;
+  }
+ 
+  input[type="checkbox"] {
+    height: 2em;
+    display: block;
+    appearance: none;
+  }
+  
+  label {
+    position: relative;
+    padding: 1rem 2.8rem;
+    background: #0bcbec;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+    margin-top: 1rem;
+  }
+  
+  label:before {
+    content: "READ MORE";
+  }
+  
+  input[type="checkbox"]:checked ~ label:before {
+    content: "READ LESS";
+  }
+  
+  .dots:has(~input[type="checkbox"]:checked){
+    display: none;
+  }
+  .extra:has(~input[type="checkbox"]:checked){
+    display: inline;
+  }
+  .encabezado {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-top: -100px;
+    
+  }
+  .encabezado span {
+    color: #0bcbec;
+  }
+  .about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+  }
+  .about-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 0.7px rgb(240, 236, 7);
+  }
+  .about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+  }
